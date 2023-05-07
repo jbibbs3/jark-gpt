@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Question.init({
-    scenario: DataTypes.STRING,
+    name: DataTypes.STRING,
     quizId: DataTypes.INTEGER
   }, {
     sequelize,
