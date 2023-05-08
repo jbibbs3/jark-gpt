@@ -44,17 +44,11 @@ router.get("/:id", authenticate, async (req, res) => {
 
 // Update a question by ID
 router.put("/:id", authenticate, async (req, res) => {
-  const { name, scenario, quizId } = req.body;
+  const { scenario } = req.body;
   try {
     const newQuestion = {};
-    if (name !== undefined) {
-      newQuestion.name = name;
-    }
     if (scenario !== undefined) {
       newQuestion.scenario = scenario;
-    }
-    if (quizId !== undefined) {
-      newQuestion.quizId = quizId;
     }
     const [updated] = await Question.update(newQuestion, {
       where: { id: req.params.id },
