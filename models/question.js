@@ -13,7 +13,6 @@ module.exports = (sequelize, DataTypes) => {
   }
   Question.init({
     scenario: DataTypes.STRING,
-    quizId: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Question',
