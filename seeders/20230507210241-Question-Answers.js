@@ -1,38 +1,22 @@
-'use strict';
+"use strict";
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
-  async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
-    await queryInterface.bulkInsert('QuestionAnswers', [
-      { question_id: 1, answer_id: 2 },
-      { question_id: 2, answer_id: 2 },
-      { question_id: 3, answer_id: 2 },
-      { question_id: 4, answer_id: 8 },
-      { question_id: 5, answer_id: 8 },
-      { question_id: 6, answer_id: 8 },
-      { question_id: 7, answer_id: 4 },
-      { question_id: 8, answer_id: 4 },
-      { question_id: 9, answer_id: 4 },
-
+  async up(queryInterface, Sequelize) {
+    await queryInterface.bulkInsert("QuestionAnswers", [
+      { questionId: 1, answerId: 1 },
+      { questionId: 1, answerId: 2 },
+      { questionId: 1, answerId: 3 },
+      { questionId: 2, answerId: 4 },
+      { questionId: 2, answerId: 5 },
+      { questionId: 2, answerId: 6 },
+      { questionId: 3, answerId: 7 },
+      { questionId: 3, answerId: 8 },
+      { questionId: 3, answerId: 9 },
     ]);
   },
 
-  async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
-    await queryInterface.bulkDelete('QuestionAnswers', null, {});
-  }
+  async down(queryInterface, Sequelize) {
+    await queryInterface.bulkDelete("QuestionAnswers", null, {});
+  },
 };
