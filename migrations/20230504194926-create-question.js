@@ -10,10 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       scenario: {
-        type: Sequelize.STRING
-      },
-      quizId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,

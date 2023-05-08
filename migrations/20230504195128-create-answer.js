@@ -10,7 +10,7 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       choice: {
-        type: Sequelize.STRING
+        type: Sequelize.TEXT
       },
       questionId: {
         type: Sequelize.INTEGER
