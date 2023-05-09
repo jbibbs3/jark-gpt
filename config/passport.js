@@ -1,4 +1,4 @@
-const JwtStrategy = require('passport-local').Strategy; // sets up local strategy using passport-jwt package
+const JwtStrategy = require('passport-jwt').Strategy; // sets up local strategy using passport-jwt package
 const ExtractJwt = require('passport-jwt').ExtractJwt;
 const {User} = require('../models');
 

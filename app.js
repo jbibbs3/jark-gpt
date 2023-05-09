@@ -2,8 +2,6 @@ const express = require("express");
 const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
-
-const session = require("express-session");
 const passport = require("passport");
 require("./config/passport")(passport);
 
@@ -22,13 +20,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
-app.use(
-  session({
-    secret: process.env.JWT_SECRET_KEY,
-    resave: false,
-    saveUninitialized: false,
-  })
-);
+app.use(passport.initialize())
 
 // intercepts incoming requests and uses the appropriate router defined above
 app.use("/auth", authRouter);
