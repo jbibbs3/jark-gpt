@@ -34,7 +34,7 @@ router.post("/login", async (req, res, next) => {
       return res.status(401).json({ error: 'Invalid username or password' });
     }
 
-    const token = jwt.sign({ id: user.id }, 'your_jwt_secret', { expiresIn: '6h' }); 
+    const token = jwt.sign({ id: user.id },'your_jwt_secret', { expiresIn: '6h' }); 
 
     res.status(200).json({ token });
   } catch (error) {
