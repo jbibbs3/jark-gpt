@@ -3,6 +3,7 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 const passport = require("passport");
+const cors = require('cors');
 require("./config/passport")(passport);
 
 // adds router for required routes
@@ -21,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 app.use(passport.initialize())
+app.use(cors());
 
 // intercepts incoming requests and uses the appropriate router defined above
 app.use("/auth", authRouter);
