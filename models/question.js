@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Question.init({
-    scenario: DataTypes.STRING,
+    name: DataTypes.STRING,
   }, {
     sequelize,
     modelName: 'Question',
